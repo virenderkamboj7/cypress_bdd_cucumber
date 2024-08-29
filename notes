@@ -1,0 +1,30 @@
+Step 1:
+npm init
+npm install cupress --save-dev
+npm i -D cypress cypress-cucumber-preprocessor
+npm install --save-dev cypress-cucumber-preprocessor
+
+Step 2:
+Add below line in cypress.config.js under e2e:
+setupNodeEvents(on, config) {
+      // implement node event listeners here
+      on('file:preprocessor', cucumber())
+    },
+    specPattern: "cypress/e2e/**/*.feature"
+
+Step 3:
+Add below line in package.json
+"cypress-cucumber-preprocessor": {
+    "nonGlobalStepDefinitions": true,
+    "step_definitions": "cypress/e2e" 
+  }
+
+
+Easier to show than to explain, so, assuming the feature file is in 
+cypress/integration/Google.feature , 
+as proposed above, the preprocessor will read all the files inside 
+cypress/integration/Google/, 
+
+so: cypress/integration/Google/google.js (or any other .js file in the same path)
+
+https://www.youtube.com/watch?v=TGLQN3xEnaU
