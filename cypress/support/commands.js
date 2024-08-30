@@ -23,3 +23,10 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+/// <reference types="cypress" />
+
+// Excel support
+Cypress.Commands.add('parseXlsx', (filePath) => {
+    return cy.task('parseXlsx', {filePath: filePath})
+})

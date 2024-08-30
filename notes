@@ -27,4 +27,8 @@ cypress/integration/Google/,
 
 so: cypress/integration/Google/google.js (or any other .js file in the same path)
 
+
+*Runing testcases by tag name:
+npx cypress run -e TAGS='@smoke'
+
 https://www.youtube.com/watch?v=TGLQN3xEnaU

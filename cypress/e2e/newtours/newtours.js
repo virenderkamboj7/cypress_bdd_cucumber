@@ -1,4 +1,12 @@
-import {Given, Then, When} from "cypress-cucumber-preprocessor/steps";
+import {Before, After, Given, Then, When} from "cypress-cucumber-preprocessor/steps";
+
+Before(()=>{
+    cy.reload()
+})
+
+After(()=>{
+    cy.reload()
+})
 
 Given("precondition", ()=> {
     cy.visit("https://demo.guru99.com/test/newtours/")
